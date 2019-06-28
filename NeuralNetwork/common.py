@@ -41,6 +41,6 @@ def fnn_layer(input_tensor, input_size, output_size, activation=None):
                              shape=[output_size],
                              initializer=tf.initializers.constant)
     output_tensor = tf.matmul(input_tensor, weights) + biases
-    if not activation:
+    if activation:
         output_tensor = activation(output_tensor)
     return output_tensor
